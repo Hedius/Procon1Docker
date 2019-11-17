@@ -13,7 +13,7 @@ RUN mkdir -p /procon && \
 	wget -O /tmp/procon.zip https://api.myrcon.net/procon/download?p=docker && \
 	unzip -x /tmp/procon.zip -d /procon/ && \
     chown procon:procon -R /procon/ && \
-    rm -f /tmp/procon.zip
+    rm -r /tmp/procon.zip /procon/Plugins /procon/Configs
 	
 WORKDIR /procon
 

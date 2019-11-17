@@ -13,13 +13,9 @@ services:
       - type: bind
         source: ./Config1
         target: /procon/Configs
-        volume:
-          nocopy: true
       - type: bind
         source: ./Plugins
         target: /procon/Plugins
-        volume:
-          nocopy: true
       # - type: bind
       #   source: ./Logs
       #   target: /procon/Logs
@@ -39,13 +35,9 @@ services:
     #     - type: bind
     #       source: ./Config2
     #       target: /procon/Configs
-    #       volume:
-    #         nocopy: true
     #     - type: bind
     #       source: ./Plugins
     #       target: /procon/Plugins
-    #       volume:
-    #         nocopy: true
     #     # - type: bind
     #     #   source: ./Logs
     #     #   target: /procon/Logs
