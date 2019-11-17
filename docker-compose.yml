@@ -11,7 +11,7 @@ services:
       - 27260:27260
     volumes:
       - type: bind
-        source: ./Config1
+        source: ./Configs1
         target: /procon/Configs
       - type: bind
         source: ./Plugins
@@ -21,24 +21,19 @@ services:
       #   target: /procon/Logs
     tty: true
 
-    # create a service for each BF server with its own Config folder
-    # procon2:
-    #   container_name: procon2
-    #   build:
-    #     context: .
-    #   image: procon/procon:1.0
-    #   restart: unless-stopped
-    #   ports:
-    #     # format: localPort:containerPort
-    #     - 27261:27260
-    #   volumes:
-    #     - type: bind
-    #       source: ./Config2
-    #       target: /procon/Configs
-    #     - type: bind
-    #       source: ./Plugins
-    #       target: /procon/Plugins
-    #     # - type: bind
-    #     #   source: ./Logs
-    #     #   target: /procon/Logs
-    #   tty: true
+#  procon2:
+#    container_name: procon2
+#    build:
+#      context: .
+#    image: procon/procon:1.0
+#    restart: unless-stopped
+#    ports:
+#      - 27261:27260
+#    volumes:
+#      - type: bind
+#        source: ./Configs2
+#        target: /procon/Configs
+#      - type: bind
+#        source: ./Plugins
+#        target: /procon/Plugins
+#    tty: true
