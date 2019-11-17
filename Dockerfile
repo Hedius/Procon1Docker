@@ -19,8 +19,6 @@ WORKDIR /procon
 VOLUME /procon/Configs ./Configs
 VOLUME /procon/Plugins ./Plugins
 
-EXPOSE 27260
-
 USER procon:procon
 
-CMD [ "mono",  "./PRoCon.Console.exe" ]
+ENTRYPOINT [ "mono",  "PRoCon.Console.exe" ]
