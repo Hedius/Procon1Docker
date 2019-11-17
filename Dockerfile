@@ -1,5 +1,12 @@
 FROM mono:latest
 
+# user for execution
+ARG UID=10000
+ARG GID=10000
+RUN RUN groupadd -r -g $GID procon && \
+    useradd -r -g procon -u $UID procon
+
+
 RUN mkdir -p /procon && \
 	apt-get update && \
 	apt-get install unzip wget -y && \
@@ -13,5 +20,7 @@ VOLUME /procon/Configs ./Configs
 VOLUME /procon/Plugins ./Plugins
 
 EXPOSE 27260
+
+USER procon:procon
 
 CMD [ "mono",  "./PRoCon.Console.exe" ]
