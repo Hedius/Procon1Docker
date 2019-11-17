@@ -17,8 +17,7 @@ RUN mkdir -p /procon && \
 	
 WORKDIR /procon
 
-VOLUME /procon/Configs ./Configs
-VOLUME /procon/Plugins ./Plugins
+VOLUME ["/procon/Configs", "/opt/procon/Plugins"]
 
 USER procon:procon
 
